@@ -1,0 +1,35 @@
+services:
+  frontend:
+    build:
+      context: ./FrontendBlog
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    env_file:
+      - ./FrontendBlog/.env
+    depends_on:
+      - backend
+    networks:
+      - blog-net
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./BackendBlog12
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SUPABASE_DB_URL: "jdbc:postgresql://aws-1-eu-west-3.pooler.supabase.com:5432/postgres?sslmode=require"
+      SUPABASE_DB_USER: "postgres.oobzklsqvdsnvdseyske"
+      SUPABASE_DB_PASSWORD: "EC2cdSYLC7nKK3TD"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    networks:
+      - blog-net
+    restart: unless-stopped
+
+networks:
+  blog-net:
+    driver: bridge
