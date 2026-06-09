@@ -1,0 +1,87 @@
+.articles-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.btn-link {
+  width: 100%;
+  padding: 0 10px;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.feed-action-btn.like-btn.active-liked svg {
+  fill: var(--blue);
+}
+
+.composer-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.composer-card h2 {
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+}
+
+.composer-card p,
+.feed-status {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.composer-toggle,
+.composer-submit {
+  width: fit-content;
+  min-height: 40px;
+  padding: 0 14px;
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  background: var(--blue);
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+.composer-toggle:hover,
+.composer-submit:hover {
+  background: var(--blue-dark);
+}
+
+.composer-form {
+  display: grid;
+  gap: 10px;
+}
+
+.composer-form input,
+.composer-form textarea,
+.composer-form select {
+  width: 100%;
+  padding: 12px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.danger-btn {
+  color: var(--red);
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.danger-btn:hover {
+  color: #ffffff;
+  background: var(--red);
+  border-color: var(--red);
+}

@@ -1,0 +1,3 @@
+VITE_API_URL=http://127.0.0.1:8080/blog/api
+VITE_SUPABASE_URL=https://oobzklsqvdsnvdseyske.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_g8cNIKA8uBdrABYbzbUsgw_dW6yMvjg

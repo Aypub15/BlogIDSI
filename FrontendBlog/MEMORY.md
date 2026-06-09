@@ -1,0 +1,1 @@
+- [CLAUDE.md](CLAUDE.md) — Project structure, architecture, and commands for both FrontendBlog and BackendBlog12.
