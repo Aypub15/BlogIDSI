@@ -56,7 +56,7 @@ function Home() {
                     {/* Welcome Editorial Banner */}
                     <header className="editorial-hero">
                         <span className="editorial-eyebrow">À LA UNE SUR BLOGIDSI</span>
-                        <h1 className="editorial-title">WELCOM</h1>
+                        <h1 className="editorial-title">WELCOME TO OUR BLOG</h1>
                     </header>
 
                     {/* Feed Posts */}
