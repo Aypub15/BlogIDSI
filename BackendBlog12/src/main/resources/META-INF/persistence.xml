@@ -9,7 +9,7 @@
         <properties>
             <!-- Valeurs locales par defaut. SUPABASE_DB_* ou DATABASE_URL surchargent ces valeurs au runtime. -->
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql://aws-1-eu-west-3.pooler.supabase.com:5432/postgres?sslmode=require"/>
+                      value="jdbc:postgresql://aws-1-eu-west-3.pooler.supabase.com:6543/postgres?sslmode=require"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres.oobzklsqvdsnvdseyske"/>
             <property name="jakarta.persistence.jdbc.password" value="EC2cdSYLC7nKK3TD"/>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>

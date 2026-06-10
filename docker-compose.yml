@@ -1,4 +1,5 @@
 services:
+
   frontend:
     build:
       context: ./FrontendBlog
@@ -18,14 +19,38 @@ services:
       context: ./BackendBlog12
       dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - "8080:8080"
+    env_file:
+      - ./.env
     environment:
-      SUPABASE_DB_URL: "jdbc:postgresql://aws-1-eu-west-3.pooler.supabase.com:5432/postgres?sslmode=require"
-      SUPABASE_DB_USER: "postgres.oobzklsqvdsnvdseyske"
-      SUPABASE_DB_PASSWORD: "EC2cdSYLC7nKK3TD"
+      SUPABASE_DB_URL: jdbc:postgresql://aws-1-eu-west-3.pooler.supabase.com:6543/postgres?sslmode=require
+      SUPABASE_DB_USER: postgres.oobzklsqvdsnvdseyske
+      SUPABASE_DB_PASSWORD: EC2cdSYLC7nKK3TD
     dns:
+      - 172.20.10.1
+      - 192.168.1.1
+      - 192.168.0.1
       - 8.8.8.8
-      - 1.1.1.1
+    networks:
+      - blog-net
+    restart: unless-stopped
+
+  jenkins:
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    container_name: blog-jenkins
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./:/workspace/blog:ro
+    dns:
+      - 172.20.10.1
+      - 192.168.1.1
+      - 192.168.0.1
+      - 8.8.8.8
     networks:
       - blog-net
     restart: unless-stopped
@@ -33,3 +58,6 @@ services:
 networks:
   blog-net:
     driver: bridge
+
+volumes:
+  jenkins_home:

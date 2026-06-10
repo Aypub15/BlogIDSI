@@ -6,7 +6,7 @@ pipeline {
         BACKEND_DIR = 'BackendBlog12'
         VITE_API_URL = 'http://127.0.0.1:8080/blog/api'
         JAVA_HOME = '/opt/java/openjdk'
-        PATH+JAVA = '/opt/java/openjdk/bin'
+        PATH = "/opt/java/openjdk/bin:${env.PATH}"
     }
 
     stages {
